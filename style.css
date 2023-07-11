@@ -45,3 +45,12 @@ a {
 .card > img {
   width: 100%;
 }
+
+.shimmer-card {
+  height: 350px;
+  width: 242px;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+  background-color: #ccc;
+}
