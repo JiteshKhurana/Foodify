@@ -4,7 +4,7 @@ const Shimmer = () => {
     <div className="restaurant-list">
       {Array(12)
         .fill("")
-        .map((e, index) => (
+        .map((e) => (
           <div key={shortid.generate()} className="shimmer-card"></div>
         ))}
     </div>
