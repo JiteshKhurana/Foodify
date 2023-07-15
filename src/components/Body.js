@@ -3,12 +3,18 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { filterData } from "../utils/helper";
 import { useState } from "react";
+import useOnline from "../utils/useOnline";
 import useListOfRestaurants from "../utils/useListOfRestaurants";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const [allRestaurants, filteredRestaurants] = useListOfRestaurants();
+
+  const isOnline = useOnline();
+
+  if (!isOnline)
+    return <h1>🚩Offline, please check your internet connection!!</h1>;
 
   if (!allRestaurants) return <h1>No Restaurants are Open at this Moment</h1>;
 
