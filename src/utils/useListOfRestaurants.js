@@ -15,7 +15,12 @@ const useListOfRestaurants = () => {
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
-  return [allRestaurants, filteredRestaurants];
+  return [
+    allRestaurants,
+    filteredRestaurants,
+    setAllRestaurants,
+    setFilteredRestaurants,
+  ];
 };
 
 export default useListOfRestaurants;

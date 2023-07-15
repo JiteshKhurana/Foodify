@@ -6,7 +6,7 @@ import useOnline from "../utils/useOnline";
 const Title = () => {
   return (
     <a href="/">
-      <img src={Logo} alt="logo" className="logo" />
+      <img src={Logo} alt="logo" className="h-32" />
     </a>
   );
 };
@@ -15,23 +15,26 @@ const Header = () => {
   const [isloggedIn, SetIsLoggedIn] = useState(true);
   const isOnline = useOnline();
   return (
-    <div className="header">
+    <div className="flex justify-between">
       <Title />
-      <div className="nav-items">
-        <ul>
+      <div>
+        <ul className="flex p-10 space-x-10">
           <Link to="/">
-            <li>Home</li>
+            <li className="hover:text-red-500">Home</li>
           </Link>
           <Link to="/about">
-            <li>About</li>
+            <li className="hover:text-red-500">About</li>
           </Link>
           <Link to="/contact">
-            <li>Contact</li>
+            <li className="hover:text-red-500">Contact</li>
           </Link>
           <Link to="/cart">
-            <li>Cart</li>
+            <li className="hover:text-red-500">Cart</li>
           </Link>
-          <li>{isOnline ? "🟢" : "🔴"}</li>
+          <Link to="/instamart">
+            <li className="hover:text-red-500">Instamart</li>
+          </Link>
+          <li>{isOnline ? "Online 🟢" : "Offline 🔴"}</li>
           {isloggedIn ? (
             <button onClick={() => SetIsLoggedIn(false)}>Logout</button>
           ) : (

@@ -9,7 +9,12 @@ import useListOfRestaurants from "../utils/useListOfRestaurants";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
 
-  const [allRestaurants, filteredRestaurants] = useListOfRestaurants();
+  const [
+    allRestaurants,
+    filteredRestaurants,
+    setAllRestaurants,
+    setFilteredRestaurants,
+  ] = useListOfRestaurants();
 
   const isOnline = useOnline();
 
@@ -22,16 +27,16 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="p-5 my-3 space-x-4 flex justify-center">
         <input
           type="text"
-          placeholder="search"
-          className="search-input"
+          placeholder="Search a Restaurant you want..."
+          className="w-96 pl-3 pr-10 py-2 rounded-lg border-2 border-red-500 hover:border-red-600 placeholder-gray-500"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="search-btn"
+          className="px-3 py-2 rounded-xl bg-red-500 text-white hover:bg-red-600"
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
             setFilteredRestaurants(data);
@@ -40,7 +45,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap">
         {filteredRestaurants.length == 0 ? (
           <h1>No Match found for "{searchText}"</h1>
         ) : (

@@ -11,9 +11,13 @@ const RestaurantDetails = () => {
   ) : (
     <div>
       <div>
-        <h1>{restaurant?.name}</h1>
-        <h3>{restaurant?.cuisines?.join(",")}</h3>
-        <h3>{restaurant?.locality + " " + restaurant.city}</h3>
+        <h1 className="font-bold text-4xl">{restaurant?.name}</h1>
+        <h3 className="font-light text-gray-500">
+          {restaurant?.cuisines?.join(",")}
+        </h3>
+        <h3 className="font-light text-gray-500">
+          {restaurant?.locality + " " + restaurant.city}
+        </h3>
         <h3>{restaurant?.costForTwoMessage}</h3>
         <h3>⭐️ {restaurant?.avgRating}</h3>
         <h4>{restaurant?.totalRatingsString}</h4>
