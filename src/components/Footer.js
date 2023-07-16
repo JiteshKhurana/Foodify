@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   return (
-    <div class="footer">
+    <div>
       Created By
-      <FontAwesomeIcon icon="fa-solid fa-heart" style={{ color: "#bb3e30" }} />
       <a
         href="https://www.linkedin.com/in/jiteshKhurana/"
         target="_blank"
