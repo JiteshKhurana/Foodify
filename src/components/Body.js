@@ -52,10 +52,10 @@ const Body = () => {
           filteredRestaurants.map((restaurant) => {
             return (
               <Link
-                to={"/restaurants/" + restaurant?.data?.id}
-                key={restaurant?.data?.id}
+                to={"/restaurants/" + restaurant?.info?.id}
+                key={restaurant?.info?.id}
               >
-                <RestaurantCard {...restaurant?.data} />
+                <RestaurantCard {...restaurant?.info} />
               </Link>
             );
           })

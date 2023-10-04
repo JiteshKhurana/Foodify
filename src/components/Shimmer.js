@@ -7,7 +7,7 @@ const Shimmer = () => {
         .map((e) => (
           <div
             key={shortid.generate()}
-            className="w-64 p-3 m-4 rounded-xl h-72 bg-gray-300"
+            className="w-60 p-3 m-5 rounded-xl h-72 bg-gray-300"
           ></div>
         ))}
     </div>
